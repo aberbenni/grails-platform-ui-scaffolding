@@ -1,3 +1,5 @@
+import org.codehaus.groovy.grails.plugins.GrailsPlugin
+
 class GrailsPlatformUiScaffoldingGrailsPlugin {
     // the plugin version
     def version = "0.1"
@@ -10,7 +12,6 @@ class GrailsPlatformUiScaffoldingGrailsPlugin {
             "grails-app/views/error.gsp"
     ]
 
-    // TODO Fill in these fields
     def title = "Grails Platform Ui Scaffolding Plugin" // Headline display name of the plugin
     def author = "Dan Roden"
     def authorEmail = "dan.roden@mintsrc.com"
@@ -21,13 +22,20 @@ This provides .
     // URL to the plugin's documentation
     def documentation = "http://grails.org/plugin/grails-platform-ui-scaffolding"
 
-    // Extra (optional) plugin metadata
+    // watch for changes to scaffolding templates...
+    def watchedResources = "file:./src/templates/scaffolding/*"
+
+    // ... and kick the scaffolding plugin when they change
+    def onChange = { event ->
+        event.manager.getGrailsPlugin('scaffolding').notifyOfEvent(
+                GrailsPlugin.EVENT_ON_CHANGE, null)
+    }
 
     // License: one of 'APACHE', 'GPL2', 'GPL3'
     def license = "APACHE"
 
     // Details of company behind the plugin (if there is one)
-    def organization = [ name: "Mintsource", url: "http://www.mintsrc.com/" ]
+    def organization = [ name: "mintsource", url: "http://www.mintsrc.com/" ]
 
     // Any additional developers beyond the author specified above.
     def developers = [ [ name: "Dan Roden", email: "dan.roden@mintsrc.com" ]]
@@ -52,12 +60,6 @@ This provides .
 
     def doWithApplicationContext = { applicationContext ->
         // TODO Implement post initialization spring config (optional)
-    }
-
-    def onChange = { event ->
-        // TODO Implement code that is executed when any artefact that this plugin is
-        // watching is modified and reloaded. The event contains: event.source,
-        // event.application, event.manager, event.ctx, and event.plugin.
     }
 
     def onConfigChange = { event ->
