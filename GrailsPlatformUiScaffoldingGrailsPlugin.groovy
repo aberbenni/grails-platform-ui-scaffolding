@@ -16,7 +16,7 @@ class GrailsPlatformUiScaffoldingGrailsPlugin {
     def author = "Dan Roden"
     def authorEmail = "dan.roden@mintsrc.com"
     def description = '''\
-This provides .
+ .
 '''
 
     // URL to the plugin's documentation
