@@ -12,7 +12,7 @@ class GrailsPlatformUiScaffoldingGrailsPlugin {
             "grails-app/views/error.gsp"
     ]
 
-    def title = "Grails Platform Ui Scaffolding Plugin" // Headline display name of the plugin
+    def title = "Grails Platform UI Scaffolding Plugin" // Headline display name of the plugin
     def author = "Dan Roden"
     def authorEmail = "dan.roden@mintsrc.com"
     def description = '''\

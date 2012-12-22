@@ -40,5 +40,6 @@ grails.project.dependency.resolution = {
 
         compile ":platform-ui:1.0.RC3"
 
+
     }
 }
