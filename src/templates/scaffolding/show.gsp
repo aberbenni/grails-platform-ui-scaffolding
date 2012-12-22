@@ -15,11 +15,6 @@
         <ui:message type="info">\${flash.message}</ui:message>
     </g:if>
 
-        <ui:button kind="button" mode="secondary" onclick="window.location='\${createLink(action:'create')}';"
-                   value="Redirect" text="New ${className}"/>
-        <ui:button kind="button" mode="primary" onclick="window.location='\${createLink(action:'edit', id: '1')}';"
-                   value="Redirect" text="Edit ${className}"/>
-
     <ol class="property-list ${domainClass.propertyName}">
         <% excludedProps = Event.allEvents.toList() << 'id' << 'version'
         allowedNames = domainClass.persistentProperties*.name << 'dateCreated' << 'lastUpdated'
@@ -57,6 +52,13 @@
         </g:if>
         <% } %>
     </ol>
+
+    <ui:block>
+        <ui:button kind="button" mode="cancel" onclick="window.location='\${createLink(action:'list')}';"
+                   value="Redirect" text="Cancel"/>
+        <ui:button kind="button" mode="primary" onclick="window.location='\${createLink(action:'edit', id: '\${${propertyName}?.id}');}"
+                   value="Redirect" text="Edit"/>
+    </ui:block>
 
 </theme:zone>
 </body>

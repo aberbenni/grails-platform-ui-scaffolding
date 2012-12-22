@@ -23,10 +23,12 @@
             <g:render template="form"/>
         </ui:fieldGroup>
         <ui:actions>
-            <ui:button kind="button" mode="secondary" onclick="window.location='\${createLink(action:'list')}';"
+            <ui:button kind="anchor" mode="secondary" href="\${createLink(action:'list')}"
                        value="Redirect" text="Cancel"/>
-            <ui:button type="submit" kind="button" mode="danger" name="delete"
-                       text="\${message(code: 'default.button.delete.label', default: 'Delete')}"/>
+            <ui:button type="submit" kind="button" mode="danger" name="_action_delete"
+                       text="\${message(code: 'default.button.delete.label', default: 'Delete')}"
+                       formnovalidate="" value="delete"
+                       onclick="return confirm('\${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');"/>
             <ui:button type="submit" kind="button" mode="primary" name="update"
                        text="\${message(code: 'default.button.update.label', default: 'Update')}"/>
         </ui:actions>

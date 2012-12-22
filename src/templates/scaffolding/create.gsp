@@ -23,7 +23,7 @@
         </ui:fieldGroup>
 
         <ui:actions>
-            <ui:button kind="button" mode="secondary" onclick="window.location='\${createLink(action:'list')}';"
+            <ui:button kind="anchor" mode="secondary" href="\${createLink(action:'list')}"
                        value="Redirect" text="Cancel"/>
             <ui:button type="submit" kind="button" mode="primary" name="create"
                        text="\${message(code: 'default.button.create.label', default: 'Create')}"/>
