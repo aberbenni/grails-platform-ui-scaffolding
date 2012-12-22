@@ -17,18 +17,18 @@
     </g:hasErrors>
 
     <ui:form action="save">
+
         <ui:fieldGroup>
             <g:render template="form"/>
-
         </ui:fieldGroup>
 
-        <fieldset class="buttons">
-            <ui:button kind="submit" mode="primary"
+        <ui:actions>
+            <ui:button kind="button" mode="secondary" onclick="window.location='\${createLink(action:'list')}';"
+                       value="Redirect" text="Cancel"/>
+            <ui:button type="submit" kind="button" mode="primary" name="create"
                        text="\${message(code: 'default.button.create.label', default: 'Create')}"/>
-
-        </fieldset>
+        </ui:actions>
     </ui:form>
-
 </theme:zone>
 </body>
 </html>

@@ -11,19 +11,24 @@
         <ui:message type="info">\${flash.message}</ui:message>
     </g:if>
     <g:hasErrors bean="\${${propertyName}}">
-            <g:eachError bean="\${${propertyName}}" var="error">
-                    <ui:message type="error" text="\${error}"/>
-            </g:eachError>
+        <g:eachError bean="\${${propertyName}}" var="error">
+            <ui:message type="error" text="\${error}"/>
+        </g:eachError>
     </g:hasErrors>
 
     <ui:form action="update">
         <g:hiddenField name="id" value="\${${propertyName}?.id}"/>
         <g:hiddenField name="version" value="\${${propertyName}?.version}"/>
-        <fieldset class="form">
+        <ui:fieldGroup>
             <g:render template="form"/>
-        </fieldset>
+        </ui:fieldGroup>
         <ui:actions>
-            <ui:button kind="submit" mode="primary" text="\${message(code: 'default.button.update.label', default: 'Update')}" />
+            <ui:button kind="button" mode="secondary" onclick="window.location='\${createLink(action:'list')}';"
+                       value="Redirect" text="Cancel"/>
+            <ui:button type="submit" kind="button" mode="danger" name="delete"
+                       text="\${message(code: 'default.button.delete.label', default: 'Delete')}"/>
+            <ui:button type="submit" kind="button" mode="primary" name="update"
+                       text="\${message(code: 'default.button.update.label', default: 'Update')}"/>
         </ui:actions>
     </ui:form>
 
