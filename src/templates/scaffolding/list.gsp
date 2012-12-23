@@ -1,7 +1,7 @@
 <% import grails.persistence.Event %>
 <html>
 <head>
-<theme:title text="${className} list"></theme:title>
+<theme:title text="${className} list"/>
 <theme:debugMode/>
 <r:require module="plugin.platformUi.tools"/>
 <g:set var="entityName" value="\${message(code: '${domainClass.propertyName}.label', default: '${className}')}"/>

@@ -1,7 +1,7 @@
 <html>
 <head>
     <theme:layout name="dataentry"/>
-    <theme:title text="Create ${className}"></theme:title>
+    <theme:title text="Create ${className}"/>
 <head>
 
 <body>

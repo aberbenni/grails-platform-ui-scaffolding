@@ -1,7 +1,7 @@
 <html>
 <head>
     <theme:layout name="dataentry"/>
-    <theme:title text="Edit ${className}"></theme:title>
+    <theme:title text="Edit \${${propertyName}}"/>
 <head>
 
 <body>

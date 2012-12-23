@@ -3,8 +3,8 @@
 <html>
 <head>
     <g:set var="entityName" value="\${message(code: '${domainClass.propertyName}.label', default: '${className}')}"/>
-    <theme:layout name="report"/>
-    <theme:title text="Show"></theme:title>
+    <theme:layout name="dataentry"/>
+    <theme:title text="Show \${${propertyName}}"></theme:title>
 <head>
 
 <body>
@@ -13,10 +13,6 @@
     <g:if test="\${flash.message}">
         <ui:message type="info">\${flash.message}</ui:message>
     </g:if>
-
-
-    <g:fieldValue field="id" bean="\${${propertyName}}" />
-
 
     <ui:table>
 
@@ -68,19 +64,12 @@
 
         <ui:button kind="button" mode="cancel" onclick="window.location='\${createLink(action:'list')}';"
                    value="Redirect" text="Cancel"/>
-        <ui:button kind="button" mode="primary"
-                   onclick="window.location='\${createLink(action:'edit', id: '\${${propertyName}?.id}');}"
-                   value="Redirect" text="Edit"/>
-
 
         <ui:button kind="button" mode="primary"
-                   onclick="window.location='\${createLink(action:'edit', id: 'propertyName?.id');}"
-                   value="Redirect" text="Edit2"/>
-
-
-        <ui:button kind="anchor" mode="primary"
-                   href="\${createLink(action:'edit', id:'\${entityName}')}"
-                   value="Redirect" text="Edit"/>
+                   type="submit"
+                   onclick="window.location='\${createLink(action:'edit', id: ${propertyName}.id)}';"
+                   value="Redirect"
+                   text="Edit"/>
 
     </ui:block>
 </theme:zone>
