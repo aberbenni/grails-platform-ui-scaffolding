@@ -60,3 +60,4 @@ The benefit of using the plugin if you plan to change these templates is that it
 
 ## Issues
 * Raise an issue on in the github repository or send me a mail is you have problems. More testing needs to be done with more themes and some issues fixed.
+* TODO.md contains some things I need to look at / understand better.
