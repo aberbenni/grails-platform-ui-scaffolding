@@ -9,6 +9,9 @@ TODO
 - <ui:input> and <ui:field> usage for the _form template and look whether tags like <ui:td> etc need to be available
   to remove all html from templates.
 
+- Get rid on the button onclick behaviour rather than a straight <a href... Had issues getting the href url properly
+  rendered. Seemed to get overriden to the index url.
+
 - Only dynamically watch the scaffolded templates folder (/src/templates/scaffolding) when the config value:
   watchScaffoldedTemplates=true in the main application config. Currently it set in the plugin onChange() in
   GrailsPlatformUiScaffoldingGrailsPlugin.groovy. This makes sure the template files are reloaded every time they
