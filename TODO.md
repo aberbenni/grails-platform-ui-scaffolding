@@ -9,11 +9,6 @@ TODO
 - <ui:input> and <ui:field> usage for the _form template and look whether tags like <ui:td> etc need to be available
   to remove all html from templates.
 
-- The plugin currently doesn't declare its own dependencies on platform-ui etc so will not transitively pull them or
-  work in run-app mode with changing the BuildConfig.groovy in the plugin. Work out whether this is the best way
-  as it avoids having to update based on evolving platform-core/ui plugin versions and it should only really be
-  included in a project in dev mode anyway.
-
 - Only dynamically watch the scaffolded templates folder (/src/templates/scaffolding) when the config value:
   watchScaffoldedTemplates=true in the main application config. Currently it set in the plugin onChange() in
   GrailsPlatformUiScaffoldingGrailsPlugin.groovy. This makes sure the template files are reloaded every time they

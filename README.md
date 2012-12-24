@@ -22,15 +22,16 @@ you had previously run the grails 'install templates' command, these files may a
 they will be replaced by these ones.
 
 
-Requirements
------
-* These templates require the following to be present in your BuildConfig.groovy as dependencies:
+What is provided
+----------------
+These replacement templates should provided all the functionality of the Grails 2.x scaffolding templates, including
+domain association links and validation constraints.
 
- `
 
 Usage
 -----
 
+### Basic Project Creation
 *create-app grails-platform-ui-scaffolding-test
 *cd grails-platform-ui-scaffolding-test
 *Add the following to `BuildConfig.grrovy` in your plugins{} dependency block
@@ -38,13 +39,24 @@ Usage
 `compile ":platform-ui:1.0.RC3"`
 
 *If you want to be able to test this in a theme other than a basic theme then also add:
-`
-
-### Either:
-* Manually copy the files in the `/src/templates/scaffolding` folder
-* Install the grails-platform-ui-scaffolding plugin and run the script
-called `install-templates-platform-ui-scaffolding` to copy the templates.
+`runtime ':bootstrap-theme:1.0.RC3'`
 
 
+### Now either:
+
+* Manually copy the files from the plugin's `/src/templates/scaffolding` folder to the root
+project `/src/templates/scaffolding`
 
 
+* Or install the grails-platform-ui-scaffolding plugin by referring it via a number of methods described here:
+`http://grails.org/doc/latest/ref/Command%20Line/install-plugin.html`
+
+
+If you install the plugin you run the script called `install-templates-platform-ui-scaffolding` to copy the templates
+to the master project.
+
+The benefit of using the plugin if you plan to change these templates is that it will set the
+`src/templates/scaffolding` folder to be watched so any changes are effective on page refresh.
+
+## Issues
+* Raise an issue on in the github repository or send me a mail is you have problems. More testing needs to be done with more themes and some issues fixed.

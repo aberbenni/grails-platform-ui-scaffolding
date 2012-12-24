@@ -36,7 +36,7 @@ grails.project.dependency.resolution = {
         runtime ":jquery:1.8.0"
         runtime ":resources:1.1.6"
 
-        runtime ':bootstrap-theme:1.0.RC2'
+        runtime ':bootstrap-theme:1.0.RC3'
 
         compile ":platform-ui:1.0.RC3"
 
