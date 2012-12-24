@@ -32,9 +32,9 @@ Usage
 -----
 
 ### Basic Project Creation
-*create-app grails-platform-ui-scaffolding-test
-*cd grails-platform-ui-scaffolding-test
-*Add the following to `BuildConfig.grrovy` in your plugins{} dependency block
+* create-app grails-platform-ui-scaffolding-test
+* cd grails-platform-ui-scaffolding-test
+* Add the following to `BuildConfig.groovy` in your plugins{} dependency block
 
 `compile ":platform-ui:1.0.RC3"`
 
