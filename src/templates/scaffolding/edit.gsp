@@ -24,7 +24,7 @@
         </ui:fieldGroup>
         <ui:actions>
             <ui:button kind="anchor" mode="secondary" href="\${createLink(action:'list')}"
-                       value="Redirect" text="Cancel"/>
+                       value="Redirect" text="\${message(code: 'default.button.cancel.label', default: 'Cancel')}"/>
             <ui:button type="submit" kind="button" mode="danger" name="_action_delete"
                        text="\${message(code: 'default.button.delete.label', default: 'Delete')}"
                        formnovalidate="" value="delete"

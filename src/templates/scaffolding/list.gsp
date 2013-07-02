@@ -14,10 +14,10 @@
     <g:if test="\${flash.message}">
         <ui:message type="info">\${flash.message}</ui:message>
     </g:if>
-
+    
     <ui:block>
         <ui:button kind="button" mode="primary" onclick="window.location='\${createLink(action:'create')}';"
-                   value="Redirect" text="New ${className}"/>
+                   value="Redirect" text="\${message(code: 'default.new.label', default: 'New ${className}', args: [\'${className}\'] )}"/>
     </ui:block>
     <ui:table>
         <ui:tr>

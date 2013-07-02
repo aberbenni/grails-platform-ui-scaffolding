@@ -60,18 +60,28 @@
 
     </ui:table>
 
-    <ui:block>
-
+    <ui:form >
+      <g:hiddenField name="id" value="\${${propertyName}?.id}"/>
+      <ui:actions>
+        
         <ui:button kind="button" mode="cancel" onclick="window.location='\${createLink(action:'list')}';"
-                   value="Redirect" text="Cancel"/>
+                   value="Redirect" text="\${message(code: 'default.button.cancel.label', default: 'Cancel')}"/>
+
 
         <ui:button kind="button" mode="primary"
-                   type="submit"
+                   type="button"
                    onclick="window.location='\${createLink(action:'edit', id: ${propertyName}.id)}';"
                    value="Redirect"
-                   text="Edit"/>
+                   text="\${message(code: 'default.button.edit.label', default: 'Edit', args: [\'${className}\'])}"/>
 
-    </ui:block>
+
+        <ui:button type="submit" kind="button" mode="danger" name="_action_delete"
+                     text="\${message(code: 'default.button.delete.label', default: 'Delete')}"
+                     formnovalidate="" value="delete"
+                     onclick="return confirm('\${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');"/>
+    
+      </ui:actions>
+    </ui:form>
 </theme:zone>
 </body>
 </html>
